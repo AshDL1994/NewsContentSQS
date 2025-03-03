@@ -14,13 +14,10 @@ def article_search(search_term, date=None):
 
         else:
 
-            # Original date string
             original_date = str(date)
 
-            # Convert to datetime object
             date_obj = datetime.strptime(original_date, "%d%m%Y")
 
-            # Convert to desired format
             formatted_date = date_obj.strftime("%Y-%m-%d")
 
             response = requests.get(f"https://content.guardianapis.com/search?q={search_term}&tags?type=article&from-date={formatted_date}&api-key={the_key}")    
@@ -37,9 +34,7 @@ def article_search(search_term, date=None):
         print(f"the following error occured: {e}")
         return ["Articles could not be retrieved"]
     
-    #else:
-
-    #    return "ok this is weird"
+    
 
 #debates = article_search("AI", "01032025")
 #pprint.pprint(debates)

@@ -11,7 +11,7 @@ def lambda_handler(event, context):
             return {
                 "statusCode": 400,
                 "message": "Missing required parameters.",
-                "input_received": event  # Show input for debugging
+                "input_received": event  
             }
 
         search_to_broker(target_queue, search_term, date_from)
