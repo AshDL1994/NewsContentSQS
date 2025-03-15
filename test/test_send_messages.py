@@ -43,22 +43,6 @@ def test_list_all_queues_no_queues():
     assert queues == "Something went wrong. Please check if you have queues available."    
 
 
-# @mock_aws
-# def test_send_message_success():
-    
-#     sqs_client = boto3.client('sqs', region_name='us-east-1')
-
-#     sqs_client.create_queue(QueueName='test-queue')
-
-#     queue_url = sqs_client.get_queue_url(QueueName='test-queue')['QueueUrl']
-    
-#     message_body = "Hello, World!"
-    
-#     response = send_message_to_queue(queue_url, message_body)
-    
-#     assert "Message sent to the que named" in response
-#     assert "test-queue" in response 
-
 @mock_aws
 def test_send_message_fail():
     
@@ -73,3 +57,5 @@ def test_send_message_fail():
     response = send_message_to_queue(queue_url, message_body)
     
     assert "Failed to send message. Please check the queue and try again." in response
+
+    
