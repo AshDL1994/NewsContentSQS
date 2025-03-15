@@ -60,7 +60,7 @@ resource "aws_iam_policy" "lambda_secrets_manager_access" {
     {
       "Effect": "Allow",
       "Action": "secretsmanager:GetSecretValue",
-      "Resource": "arn:aws:secretsmanager:eu-west-2:445567083239:secret:guardian_key-*"
+      "Resource": "arn:aws:secretsmanager:eu-west-2:${data.aws_caller_identity.current.account_id}:secret:guardian_key-*"
     }
   ]
 }
