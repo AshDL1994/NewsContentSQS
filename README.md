@@ -10,13 +10,23 @@ You must also obtain an API key from the link below, and store this key in an AW
 
 https://open-platform.theguardian.com/access/
 
-Please name the key "guardian_key"
+Please name the key "guardian_key". Once again there is an assumption here that the key is being created with the same AWS user which is associated with the CLI.
 
-Please open a new terminal and ensure you are in a fresh Venv.
+Please open a new terminal and ensure you are in a fresh Venv. Also double cehck you are in the project repo!
 
 Please set the Pythonpath to the root directory.
 
+Install requirments
+pip install -r requirements.txt
+
+Run tests
+pytest all_tests
+
+cd to the terraform folder
+
 At this point you can Terraform init, Terraform plan and Terraform apply.
+
+cd out of the terraform folder
 
 At this point you can run the following command...
 
