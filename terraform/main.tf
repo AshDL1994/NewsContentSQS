@@ -1,5 +1,12 @@
+variable "aws_region" {
+  default     = "eu-west-2"
+  description = "AWS region to deploy resources"
+}
+
+data "aws_caller_identity" "current" {}
+
 provider "aws" {
-  region = "eu-west-2"  
+  region = var.aws_region
 }
 
 resource "aws_iam_role" "lambda_role" {
@@ -91,7 +98,7 @@ resource "aws_iam_policy" "lambda_sqs_access" {
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
       ],
-      "Resource": "arn:aws:sqs:eu-west-2:445567083239:*"
+      "Resource": "arn:aws:sqs:${var.aws_region}:${data.aws_caller_identity.current.account_id}:*"
     }
   ]
 }
