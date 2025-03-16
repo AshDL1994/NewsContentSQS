@@ -30,7 +30,7 @@ cd out of the terraform folder
 
 At this point you can run the following command...
 
-$ aws lambda invoke --function-name searchBrokerFunction --payload '{"target_queue": "hello-world", "search_term": "machine learning"}' response.json --cli-binary-format raw-in-base64-out
+$ aws lambda invoke --function-name searchBrokerFunction --payload '{"target_queue": "hello-world", "search_term": "Artificial intelligence"}' response.json --cli-binary-format raw-in-base64-out
 
 This should create a json file with the content "{"statusCode": 200, "message": "Message sent successfully!", "target_queue": "hello-world"}".
 
