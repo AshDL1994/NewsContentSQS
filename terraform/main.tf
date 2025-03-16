@@ -37,8 +37,8 @@ resource "aws_iam_policy_attachment" "lambda_basic_execution" {
 
 resource "aws_lambda_function" "search_broker_lambda" {
   function_name    = "searchBrokerFunction"
-  filename         = "deployment.zip"
-  source_code_hash = filebase64sha256("deployment.zip")
+  filename         = "../deployment.zip"
+  source_code_hash = filebase64sha256("../deployment.zip")
   role             = aws_iam_role.lambda_role.arn
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.9"
