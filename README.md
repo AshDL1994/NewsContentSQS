@@ -12,7 +12,7 @@ https://open-platform.theguardian.com/access/
 
 Please name the key "guardian_key". Once again there is an assumption here that the key is being created with the same AWS user which is associated with the CLI.
 
-Please open a new terminal and ensure you are in a fresh Venv. Also double cehck you are in the project repo!
+Please open a new terminal, double check that you are in the project repo and ensure you are in a fresh Venv. 
 
 Please set the Pythonpath to the root directory.
 
@@ -40,8 +40,10 @@ You can replace "hello-world" to specify or create a new queue, and you can adju
 
 IMPORTANT - if using the additonal "date_from" please input dates in the following format.
 
-$ aws lambda invoke --function-name searchBrokerFunction --payload '{"target_queue": "hello-world", "search_term": "machine learning", "date_from": 01012025}' response.json --cli-binary-format raw-in-base64-out
+$ aws lambda invoke --function-name searchBrokerFunction --payload '{"target_queue": "hello-world", "search_term": "machine learning", "date_from": "01012025"}' response.json --cli-binary-format raw-in-base64-out
 
 The above will return articles from after the first day of the year 2025.
 
 Please do not input 01/01/2025 or any other variation. 
+
+Please ensure the input date is also a string.
